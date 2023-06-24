@@ -1,0 +1,75 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-12">
+      <div class="card text-center">
+        <div class="card-header">
+          CALCULAR RESISTENCIAS
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Selecciona las bandas para calcular el resultado</h5>
+          <div class="row card-text">
+            <div class="col-3">
+              <label for="banda1">BANDA 1</label>
+              <select class="form-select" aria-label="Default select example" [(ngModel)]="valorBanda1">
+                <option *ngFor="let banda of bandas" value="{{banda.valor}}" [style.background]="banda.color" style="color: white;">{{banda.banda}}</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <label for="banda2">BANDA 2</label>
+              <select class="form-select" aria-label="Default select example" [(ngModel)]="valorBanda2">
+                <option *ngFor="let banda of bandas" value="{{banda.valor}}" [style.background]="banda.color" style="color: white;">{{banda.banda}}</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <label for="banda3">BANDA 3</label>
+              <select class="form-select" aria-label="Default select example" [(ngModel)]="valorBanda3">
+                <option *ngFor="let banda of banda3" value="{{banda.valor}}" [style.background]="banda.color" style="color: white;">{{banda.banda}}</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <label for="tolerancia">TOLERANCIA</label>
+              <div class="form-check" *ngFor="let t of tolerancia">
+                <input class="form-check-input" [(ngModel)]="valorTolerancia" [value]="t.valor" type="radio" name="tolerancia">
+                <label class="form-check-label" for="tolerancia">
+                  {{ t.banda }}
+                </label>
+              </div>
+            </div>
+            <div class="col-12 text-center mt-4">
+              <button type="button" class="btn btn-outline-success" style="width: 150px;" (click)="calcularResistencia()">CALCULAR</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+          EL RESULTADO ES: {{resultado}} Ω   ValorM:{{valorMaximo}}  ValorMinimo:{{valorMinimo}}
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">BANDA 1</th>
+                <th scope="col">BANDA 2</th>
+                <th scope="col">BANDA 3</th>
+                <th scope="col">TOLERANCIA</th>
+                <th scope="col">VALOR </th>
+                <th scope="col">VALOR MINIMO</th>
+                <th scope="col">VALOR MAXIMO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let valor of valores;">
+                <th [style.background]="valor.colorBanda1">{{valor.banda1}}</th>
+                <th [style.background]="valor.colorBanda2">{{valor.banda2}}</th>
+                <th [style.background]="valor.colorBanda3">{{valor.banda3}}</th>
+                <th [style.background]="valor.colorTolerancia">{{valor.tolerancia}}</th>
+                <th >{{valor.valor}}</th>
+                <th >{{valor.valorMinimo}}</th>
+                <th >{{valor.valorMaximo}}</th>
+              </tr>
+            </tbody>
+          </table>
+          <pre>{{valores | json}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
