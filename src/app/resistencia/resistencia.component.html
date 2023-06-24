@@ -56,10 +56,10 @@
             </thead>
             <tbody>
               <tr *ngFor="let valor of valores;">
-                <th [style.background]="valor.colorBanda1">{{valor.banda1}}</th>
-                <th [style.background]="valor.colorBanda2">{{valor.banda2}}</th>
-                <th [style.background]="valor.colorBanda3">{{valor.banda3}}</th>
-                <th [style.background]="valor.colorTolerancia">{{valor.tolerancia}}</th>
+                <th>{{valor.banda1}}</th>
+                <th>{{valor.banda2}}</th>
+                <th>{{valor.banda3}}</th>
+                <th >{{valor.tolerancia}}</th>
                 <th >{{valor.valor}}</th>
                 <th >{{valor.valorMinimo}}</th>
                 <th >{{valor.valorMaximo}}</th>
