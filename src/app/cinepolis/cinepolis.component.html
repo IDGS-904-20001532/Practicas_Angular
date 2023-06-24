@@ -1,0 +1,40 @@
+<div class="container">
+    <h2 class="text-center"><b>Cinepolis</b></h2>
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                    <label>Ingresa el nombre</label>
+                    <input class="form-control" [(ngModel)]="nombre">
+                </div>
+                <div class="col-12">
+                    <label>Ingresa la cantidad de compradores</label>
+                    <input class="form-control" [(ngModel)]="compradores">
+                </div>
+                <div class="col-12">
+                    <label for="tolerancia">Tarjeta Cineco</label>
+                    <div class="form-check" *ngFor="let t of tarjeta">
+                        <input class="form-check-input" [(ngModel)]="valorTarjeta" [value]="t.valor" type="radio" name="tarjeta">
+                        <label class="form-check-label" for="tolerancia">
+                        {{ t.nombre }}
+                        </label>
+              </div>
+                </div>
+                <div class="col-12">
+                    <label>Cantidad de Boletas</label>
+                    <input class="form-control" [(ngModel)]="cantidad">
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="col-12">
+                <label>Resultado </label>
+                <input class="form-control" [(ngModel)]="resultado">
+            </div>
+        </div>
+        <div class="col-12 text-center mt-4">
+            <label>ACCIONES</label><br>
+            <button type="button" class="btn btn-outline-success">PROCESAR</button>
+        </div>
+    </div>
+</div>
