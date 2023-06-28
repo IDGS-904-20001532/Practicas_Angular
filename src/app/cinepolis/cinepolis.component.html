@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-12">
                     <label>Ingresa la cantidad de compradores</label>
-                    <input class="form-control" [(ngModel)]="compradores">
+                    <input class="form-control" type="number" [(ngModel)]="compradores">
                 </div>
                 <div class="col-12">
                     <label for="tolerancia">Tarjeta Cineco</label>
@@ -22,19 +22,19 @@
                 </div>
                 <div class="col-12">
                     <label>Cantidad de Boletas</label>
-                    <input class="form-control" [(ngModel)]="cantidad">
+                    <input class="form-control" type="number"  [(ngModel)]="cantidadBoletos">
                 </div>
             </div>
         </div>
         <div class="col-6">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <label>Resultado </label>
-                <input class="form-control" [(ngModel)]="resultado">
+                <input class="form-control"  [(ngModel)]="resultado">
             </div>
         </div>
         <div class="col-12 text-center mt-4">
             <label>ACCIONES</label><br>
-            <button type="button" class="btn btn-outline-success">PROCESAR</button>
+            <button type="button" class="btn btn-outline-success" (click)="comprar()">PROCESAR</button>
         </div>
     </div>
 </div>
