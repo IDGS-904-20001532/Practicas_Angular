@@ -1,40 +1,52 @@
-<div class="container">
-    <h2 class="text-center"><b>Cinepolis</b></h2>
+<div class="container mt-2">
     <div class="row">
-        <div class="col-6">
-            <div class="row">
-                <div class="col-12">
-                    <label>Ingresa el nombre</label>
-                    <input class="form-control" [(ngModel)]="nombre">
+        <div class="col-12">
+            <div class="card text-center">
+                <div class="card-header" style="background-color: #3393FF; color: white;">
+                    CINEPOLIS
                 </div>
-                <div class="col-12">
-                    <label>Ingresa la cantidad de compradores</label>
-                    <input class="form-control" type="number" [(ngModel)]="compradores">
-                </div>
-                <div class="col-12">
-                    <label for="tolerancia">Tarjeta Cineco</label>
-                    <div class="form-check" *ngFor="let t of tarjeta">
-                        <input class="form-check-input" [(ngModel)]="valorTarjeta" [value]="t.valor" type="radio" name="tarjeta">
-                        <label class="form-check-label" for="tolerancia">
-                        {{ t.nombre }}
-                        </label>
-              </div>
-                </div>
-                <div class="col-12">
-                    <label>Cantidad de Boletas</label>
-                    <input class="form-control" type="number"  [(ngModel)]="cantidadBoletos">
+                <div class="card-body" style="background-color: antiquewhite;">
+                    <div class="row card-text">
+                        <div class="col-6" >
+                            <div class="row">
+                                <div class="col-12">
+                                    <label>Ingresa el nombre</label>
+                                    <input class="form-control" [(ngModel)]="nombre">
+                                </div>
+                                <div class="col-12">
+                                    <label>Ingresa la cantidad de compradores</label>
+                                    <input class="form-control" type="number" [(ngModel)]="compradores">
+                                </div>
+                                <div class="col-12">
+                                    <label for="tolerancia">Tarjeta Cineco</label>
+                                    <div class="form-check" *ngFor="let t of tarjeta">
+                                        <input class="form-check-input" [(ngModel)]="valorTarjeta" [value]="t.valor"
+                                            type="radio" name="tarjeta">
+                                        <label class="form-check-label" for="tolerancia">
+                                            {{ t.nombre }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label>Cantidad de Boletas</label>
+                                    <input class="form-control" type="number" [(ngModel)]="cantidadBoletos">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="col-12 text-center">
+                                <label>Resultado </label><br>
+                                <label>Nombre del cliente:{{nombre}}</label><br>
+                                <input class="form-control" [(ngModel)]="resultado">
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <label>ACCIONES</label><br>
+                            <button type="button" class="btn btn-outline-success" (click)="comprar()">PROCESAR</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="col-12 text-center">
-                <label>Resultado </label>
-                <input class="form-control"  [(ngModel)]="resultado">
-            </div>
-        </div>
-        <div class="col-12 text-center mt-4">
-            <label>ACCIONES</label><br>
-            <button type="button" class="btn btn-outline-success" (click)="comprar()">PROCESAR</button>
         </div>
     </div>
 </div>

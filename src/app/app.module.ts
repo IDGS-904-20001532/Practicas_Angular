@@ -10,10 +10,14 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 import { ResistenciaModuleModule } from './resistencia-module/resistencia-module.module';
 import { CinepolisComponent } from './cinepolis/cinepolis.component';
 import { CinepolisAngularMaterialModule } from './cinepolis-angular-material/cinepolis-angular-material.module';
+import { MenuComponent } from './menu/menu.component';
+import { PizzasComponent } from './pizzas/pizzas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
+    PizzasComponent
   ],
   imports: [
     BrowserModule,
