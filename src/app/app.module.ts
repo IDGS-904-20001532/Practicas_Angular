@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DistanciaComponent } from './distancia/distancia.component';
-import { ResistenciaComponent } from './resistencia/resistencia.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { ResistenciaModuleModule } from './resistencia-module/resistencia-module.module';
-import { CinepolisComponent } from './cinepolis/cinepolis.component';
 import { CinepolisAngularMaterialModule } from './cinepolis-angular-material/cinepolis-angular-material.module';
 import { MenuComponent } from './menu/menu.component';
-import { PizzasComponent } from './pizzas/pizzas.component';
+import { PizzasModule } from './pizzas/pizzas.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    PizzasComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +20,8 @@ import { PizzasComponent } from './pizzas/pizzas.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     ResistenciaModuleModule,
-    CinepolisAngularMaterialModule
+    CinepolisAngularMaterialModule,
+    PizzasModule
   ],
   providers: [],
   bootstrap: [AppComponent]

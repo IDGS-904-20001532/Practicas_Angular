@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-3">
+            <label class="nombre">Nombre</label>
+            <input class="form-control" [(ngModel)]="nombre" type="text"/>
+        </div>
+        <div class="col-4 mt-3">
+            <label class="direccion">Direccion</label>
+            <input class="form-control" type="text"/>
+        </div>
+        <div class="col-4 mt-3">
+            <label class="telefono">Telefono</label>
+            <input class="form-control" type="text"/>
+        </div>
+        <div class="col-4 mt-3">
+            <label class="telefono">Tamaño pizza</label><br><br>
+            <div class="form-check" *ngFor="let t of tamanio">
+              <input class="form-check-input" [(ngModel)]="tamanioPizza" [value]="t.valor"
+                  type="radio" name="tarjeta">
+              <label class="form-check-label" for="tolerancia">
+                  {{ t.nombre }}
+              </label>
+          </div>
+        </div>
+        <div class="col-4 mt-3">
+            <label class="telefono">Ingredientes</label><br><br>
+            <div>
+              <div *ngFor="let i of ingrediente">
+                  <input type="checkbox" [(ngModel)]="i.check" [value]="i.valor"/>
+                  <label>{{i.nombre}}</label>
+              </div>
+          </div>
+                
+        </div>
+        <div class="col-4 mt-3">
+            <label class="numPizzas">Numero de pizzas</label>
+            <input class="form-control" type="text" [(ngModel)]="numeroPizzas"/>
+        </div>
+        <div class="col-12 text-center">
+          <button type="button" (click)="guardarPizzas()" class="btn btn-info">Guardar</button><br><br>
+        </div>
+        <hr>
+        <div class="col-6 mt-5">
+          <div class="row">
+            <div class="col-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th scope="col">Tamaño</th>
+                    <th scope="col">Ingredientes</th>
+                    <th scope="col">Numero de Pizzas</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of resultadoCompra; let i = index">
+                    <th>{{i+1}}</th>
+                    <th >{{p.Tamanio}}</th>
+                    <th >{{p.Ingrediente}}</th>
+                    <th >{{p.NumPizzas}}</th>
+                    <th >{{p.SubTotal}}</th>
+                    <th><button type="button" class="btn btn-danger" (click)="eliminar(i)">X</button>
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-12 text-center">
+              <button type="button" (click)="comprarTotal()" class="btn btn-info">Terminar</button><br><br>
+            </div>
+          </div>
+         
+        </div>
+        <div class="col-6 mt-5">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Total</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of resultadoTotal">
+                <th >{{r.Nombre}}</th>
+                <th >{{r.Total}}</th>
+              </tr>
+              <th>Ventas totales:   {{ventasTotales}}</th>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </div>
